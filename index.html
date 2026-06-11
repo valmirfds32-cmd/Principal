@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portal de Ferramentas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabeçalho de Propaganda */
+        .cabecalho-anuncio {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+
+        /* Conteúdo Principal */
+        .conteudo {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .titulo {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 24px;
+        }
+
+        /* Grade de Botões */
+        .grade-botoes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .botao-ferramenta {
+            display: block;
+            padding: 20px 15px;
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .botao-ferramenta:hover {
+            background-color: #1976D2;
+        }
+
+        /* Rodapé de Propaganda */
+        .rodape-anuncio {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+
+        /* Responsividade: em telas pequenas fica 1 por linha */
+        @media (max-width: 600px) {
+            .grade-botoes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho para Propaganda -->
+    <div class="cabecalho-anuncio">
+        Espaço reservado para Propaganda
+    </div>
+
+    <!-- Conteúdo Principal com os Botões -->
+    <main class="conteudo">
+        <h1 class="titulo">Ferramentas Úteis</h1>
+        
+        <div class="grade-botoes">
+            <a href="https://valmirfds32-cmd.github.io/cadremedio/" target="_blank" class="botao-ferramenta">
+                cad. remédio
+            </a>
+
+            <a href="https://valmirfds32-cmd.github.io/Superdata/datacontagemi.html" target="_blank" class="botao-ferramenta">
+                super calendário
+            </a>
+
+            <a href="https://valmirfds32-cmd.github.io/Fotoseditar/" target="_blank" class="botao-ferramenta">
+                editar foto
+            </a>
+
+            <a href="https://valmirfds32-cmd.github.io/fotosparagif/" target="_blank" class="botao-ferramenta">
+                anima gif
+            </a>
+
+            <a href="https://valmirfds32-cmd.github.io/Cortamusica/cortarmusica.html" target="_blank" class="botao-ferramenta">
+                cortar música
+            </a>
+
+            <a href="https://valmirfds32-cmd.github.io/Qrcode/" target="_blank" class="botao-ferramenta">
+                ler qrcode
+            </a>
+        </div>
+    </main>
+
+    <!-- Rodapé para Propaganda -->
+    <div class="rodape-anuncio">
+        Espaço reservado para Propaganda
+    </div>
+
+</body>
+</html>
