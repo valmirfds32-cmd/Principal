@@ -75,6 +75,16 @@
             background-color: #1976D2;
         }
 
+        /* Seção de Mensagens e Comentários */
+        .secao-inferior {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
         .label-agradecimento {
             font-size: 18px;
             font-weight: bold;
@@ -95,6 +105,21 @@
             border-radius: 20px;
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        .formulario-comentarios {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .label-comentarios {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
         }
 
         .campo-texto {
@@ -182,25 +207,49 @@
                 ler qrcode
             </a>
         </div>
-
-        <div class="secao-inferior">
+<div class="secao-inferior">
             <p class="label-agradecimento">Obrigado por usar nossos aplicativos!</p>
             <p class="label-creditos">Criado por Valmir F. da S. Desenvolvidos pelas IAs, Gemini, Dola e Perplexity</p>
             
             <div class="contador-visitantes">
-                Você é o visitante número <span id="contador">...</span>
-            </div>
+    Você é o visitante número: <span id="contador-local">1</span>
+</div>
+
+            <form action="https://formspree.io/f/SEU_ID_DO_FORMSPREE" method="POST" class="formulario-comentarios">
+                <label class="label-comentarios" for="comentario">Comentário e sugestões</label>
+                <textarea class="campo-texto" id="comentario" name="comentario" placeholder="Escreva seu comentário aqui..." required></textarea>
+                <button type="submit" class="botao-enviar">Enviar Comentário</button>
+            </form>
+        </div>
+    </main>
 
     <div class="rodape-anuncio">
         Espaço reservado para Propaganda
     </div>
-
-    <script>
-        function cb(response) {
-            document.getElementById('contador').innerText = response.value;
+<script>
+    // Função que gerencia o contador sem depender de servidores externos
+    function gerenciarContador() {
+        // Verifica se já existe uma contagem no navegador
+        let visitas = localStorage.getItem('contador_visitas');
+        
+        if (visitas) {
+            // Se já existe, soma 1
+            visitas = parseInt(visitas) + 1;
+        } else {
+            // Se é a primeira vez (ou se limpou o histórico), começa em um número base legal
+            visitas = 0; // Você pode mudar o 142 para o número que quiser começar!
         }
-    </script>
-    <script async src="https://api.countapi.xyz/hit/valmirfds32-portal/visitas?callback=cb"></script>
+        
+        // Salva o novo número no navegador
+        localStorage.setItem('contador_visitas', visitas);
+        
+        // Mostra o número na tela
+        document.getElementById('contador-local').innerText = visitas;
+    }
 
+    // Executa a função assim que a página carrega
+    window.onload = gerenciarContador;
+</script>
 </body>
 </html>
+        
